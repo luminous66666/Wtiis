@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
       body {
         margin: 0;
@@ -8,13 +9,48 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
+        background-color: #121212;
+        color: #FFFFFF;
+        font-family: 'Orbitron', sans-serif;
+        animation: fadeIn 2s;
       }
-      input {
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      h1 {
+        margin: 0;
+      }
+      input[type="text"], input[type="submit"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #BB86FC;
+        background: none;
+        color: #BB86FC;
+        border-radius: 4px;
+      }
+      input[type="text"] {
+        width: 200px;
         margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      input[type="submit"]:hover {
+        background-color: #BB86FC;
+        color: #121212;
       }
     </style>
   </head>
   <body>
-    <center><h1>Rhodium</h1><form method=POST action=/service/gateway><input name=url><br><input type=submit></form>
+    <center>
+      <h1>Rhodium</h1>
+      <form method="POST" action="/service/gateway">
+        <input type="text" name="url">
+        <br>
+        <input type="submit">
+      </form>
+    </center>
   </body>
 </html>
